@@ -1,0 +1,1 @@
+do tomcat 10.0.5 chạy không được như trong ảnh -> đổi sang 9.0.45
