@@ -3,7 +3,7 @@
 ### Tên đề tài: Ứng dụng nấu ăn thông minh
 ### Nhóm 28:
 
-    PM : Nguyễn Thảo  
+    PM : Nguyễn Thị Thảo  
     Member Dev:
     1. Thiều Văn Hoàng      18110114
     
