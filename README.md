@@ -29,8 +29,18 @@ These instructions will get you a copy of the project up and running on your loc
   - JSTL: [JSTL](https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-spec)
   - Use JSP EL.
   - Communicate with the server: [sql2o](https://www.sql2o.org/) and [JDBC driver for MySQL](https://www.mysql.com/products/connector/)
+  - Used Bcrypt [Learn it](https://github.com/kelektiv/node.bcrypt.js/)
 ### Installation
 - Clone project.
 - Go to folder [SmartCookingApp](https://github.com/johngoodman2k/Smart-Cooking-App/tree/main/SmartCookingApp_Project)
-- Run folder scWebApp on IntelliJ IDEA Ultimate.
-  
+- [Run folder scWebApp on IntelliJ IDEA Ultimate](https://github.com/johngoodman2k/Smart-Cooking-App/blob/main/SmartCookingApp_Project/README.md).
+- Run Xampp. If you haven't already. [Download here](https://www.apachefriends.org/index.html).
+- [Run Navicat and Execute SQL File](https://github.com/johngoodman2k/Smart-Cooking-App/blob/main/SmartCookingApp_Project/SQL/Navicat/README.md).
+
+### Usage
+Login to Admin:
+  - Username: admin
+  - Password: admin
+
+Or you can register new account.
+ 
