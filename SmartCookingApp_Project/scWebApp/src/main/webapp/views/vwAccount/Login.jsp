@@ -32,7 +32,7 @@
         <div class="col-3" >
 
             <div style=" background-color: white; border-top-right-radius: 25%; ">
-                <div style="margin-top: 90%; text-align: center; padding-top: 10% ; " ><h1 style="color: orange;">Login</h1></div>
+                <div style="margin-top: 90%; text-align: center; padding-top: 10% ; " ><h1 style="color: orange;">SIGN IN</h1></div>
                 <c:if test="${hasError}">
                     <div class="alert alert-warning alert-dismissible fade show" role="alert" style="color: red">
                         <strong>Login failed!</strong> ${errorMessage}
