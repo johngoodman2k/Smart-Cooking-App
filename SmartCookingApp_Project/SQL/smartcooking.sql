@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 26/04/2021 17:34:49
+ Date: 26/04/2021 21:12:52
 */
 
 SET NAMES utf8mb4;
@@ -30,12 +30,13 @@ CREATE TABLE `users`  (
   `dob` date NOT NULL,
   `permission` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES (1, 'khang', '$12$AaDVSEQ8JLyPN74BO30srOByMta2UhLueGuN5Ej/T1d813GrWVJaa', 'khangkid', 'khangkid1234dd@gmail.com', '2021-04-01', 0);
 INSERT INTO `users` VALUES (2, 'khangkid123', '$2a$12$4gjb2KhYbj3EblKXEaPQZehNqckByhD9EVY3D5ldyXVwUd.ewdG2i', 'khanghehe', 'khangkid1234dd@gmail.com', '2021-01-14', 0);
+INSERT INTO `users` VALUES (3, 'admin', '$2a$12$b1NItyNrmq2Rf4xef.jEzuBDYn9d14yR1GjnTgkGg14vxWuFEqyxO', 'Admin', 'Admin@gmail.com', '2000-01-01', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
