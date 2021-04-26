@@ -1,14 +1,14 @@
-Installation
+## Installation
 
-B1: Phần mềm chạy code: IntelliJ IDEA 2021.1 x64.
+### B1: Phần mềm chạy code: IntelliJ IDEA Ultimate.
 
-B2: Mở Project(../SmartCookingApp-Project/scWebApp).
+### B2: Mở Project([ở Folder](https://github.com/johngoodman2k/Smart-Cooking-App/tree/main/SmartCookingApp_Project/scWebApp)).
 
-B3: Add sever Tomcat (Đã để sẵn trong file /SmartCookingApp-Project/tool-sever)
-(!)Lưu ý:
-- Nếu bạn chưa cài đặt JDK 16 phần mềm sẽ nhắc bạn cài đặt nó.
-- Nếu chương trình đã add sẵn sever Tomcat thì có thể bỏ qua mục bước này.
-Nếu chưa add sever Tomcat.
+### B3: Add sever Tomcat ([Folder Tomcat](https://github.com/johngoodman2k/Smart-Cooking-App/tree/main/SmartCookingApp_Project/tool-sever)
+)
+-Lưu ý:
+ - Nếu bạn chưa cài đặt JDK 16 phần mềm sẽ nhắc bạn cài đặt nó.
+ - Nếu chương trình đã add sẵn sever Tomcat thì có thể bỏ qua bước này. Nếu chưa add sever Tomcat đọc hướng dẫn [ở đây](https://github.com/johngoodman2k/Smart-Cooking-App/tree/main/SmartCookingApp_Project/tool-sever)
 
 B4: Chạy thử web với những url bên dưới
 	- http://localhost:8080/scWeb/Home
@@ -16,10 +16,8 @@ B4: Chạy thử web với những url bên dưới
 	- http://localhost:8080/scWeb/Account/Register
 
 
-
-
-Library (Sử dụng file pom.xml)
-
+## Library ([file pom.xml](https://github.com/johngoodman2k/Smart-Cooking-App/blob/main/SmartCookingApp_Project/scWebApp/pom.xml))
+- Dưới đây là những thư viện được thêm vào project
 <!-- taglibs -->
 	<dependency>
             <groupId>org.apache.taglibs</groupId>
