@@ -1,4 +1,4 @@
-###Hướng dẫn xài Navicat Premium và cách connection đến MySQL
+### Hướng dẫn xài Navicat Premium và cách connection đến MySQL
 ##Link download: [here]https://www.navicat.com/en/products
 
 ## B1: Thêm connection mới cho MySQL
