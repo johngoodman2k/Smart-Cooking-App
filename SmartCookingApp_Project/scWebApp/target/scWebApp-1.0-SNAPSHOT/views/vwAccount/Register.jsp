@@ -9,7 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
         body{
@@ -32,7 +33,7 @@
         <div class="col-3" >
 
             <div style=" background-color: white; border-top-right-radius: 25%; ">
-                <div style="margin-top: 15%; text-align: center; padding-top: 10% ; " ><h1 style="color: orange;">Login</h1></div>
+                <div style="margin-top: 15%; text-align: center; padding-top: 10% ; " ><h1 style="color: orange;">SIGN UP</h1></div>
                 <c:if test="${hasError}">
                     <div class="alert alert-warning alert-dismissible fade show" role="alert" style="color: red">
                         <strong>Login failed!</strong> ${errorMessage}
@@ -66,7 +67,7 @@
                                 <input id="txtDOB" type="text" class="input" name="dob">
                             </div>
                             <div>
-                                <button type="submit" class="btn btn-outline-warning" style="width: 78%;">Sign In</button>
+                                <button type="submit" class="btn btn-outline-warning" style="width: 78%;">Sign Up</button>
                             </div>
 
                             <div style="padding-top: 10%;">
@@ -84,6 +85,19 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"> </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+<script>
+
+    $('#txtDOB').datetimepicker({
+        format: 'd/m/Y',
+        timepicker: false,
+        mask: true,
+    });
+
+    $('#user').select();
+</script>
 </body>
 
 </html>

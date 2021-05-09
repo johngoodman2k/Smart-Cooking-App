@@ -1,412 +1,335 @@
-
 <%@ page contentType="text/html;charset=UTF-8" %>
-<!DOCTYPE html>
-<html lang="en">
+<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/b325eaacc3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/styles1.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/style.css">
-
-
-
-    <link rel="stylesheet" href="style.css">
-    <title>Trang chủ</title>
-</head>
-
-<body>
-
-<nav class="nav-bar  ">
-    <div class="nav-bar__background">
-        <ul aria-label="Primary navigation bar" class="nav-bar__primary-menu xs-flex xs-flex-align-center xs-mx-auto xs-pl2 xs-pr1 sm-pr2 list-unstyled">
-            <li class="xs-relative list-unstyled xs-mr1 lg-mr3">
-                <a class="nav-item nav-logo" href=""><img src="${pageContext.request.contextPath}/public/imgs/2.png" class="tasty-logo xs-mt1" alt=""></a>
-            </li>
-
-            <li class="nav-item list-unstyled"><a aria-label="Home" class="top-level-nav-link nav-item xs-text-4 md-text-2 extra-bold xs-px1 xs-py2 lg-p2 xs-hide md-block" href="">Home</a></li>
-            <li class="nav-item list-unstyled"><a aria-label="About" class="top-level-nav-link nav-item xs-text-4 md-text-2 extra-bold xs-px1 xs-py2 lg-p2 xs-hide md-block" href="">About</a></li>
-            <li class="nav-item list-unstyled"><a aria-label="Contact" class="top-level-nav-link nav-item xs-text-4 md-text-2 extra-bold xs-px1 xs-py2 lg-p2 xs-hide md-block" href="">Contact</a></li>
-            <li class="nav-menu-container xs-inline-block xs-static md-relative xs-px1 xs-py2 lg-p2 xs-text-4 md-text-2 list-unstyled" id="nav-menu-container">
-
-
-                <button aria-label="" aria-expanded="false" aria-haspopup="true" class="test1 recipe-nav-toggle button--clear nav-item xs-relative md-block extra-bold">
-                    Recipes
-                </button>
-            </li>
-
-            <li class="srch md-col-3 xs-relative list-unstyled">
-                <form autocomplete="off" id="search-form" novalidate="" class="i-amphtml-form">
-                    <div class="srch-wrap"><button aria-label="Open search bar input" class="button--clear srch-icon-wrapper" type="button"><i class="fas fa-search ml-3"></i></button>
-                        <input type="text" aria-label="Search" class="srch-input offset-srch" id="search" name="search" placeholder="Search " tabindex="0" value=""><button aria-label="Clear Search" class="button--clear clear-search offset-srch xs-hide"
-                                                                                                                                                                                               type="button"><svg class="xs-inline-block"><use xmlns:xlink="" xlink:href="#x"></use></svg></button></div>
-                </form>
-            </li>
-            <li class="pr-2 pl-3"><button type="button" class="btn btn-outline-primary">Sign up </button>
-            </li>
-            <li><button type="button" class="btn btn-outline-secondary">Sign in </button></li>
-        </ul>
-
-        <div class="header-dropdown-menu">
-            <ul>
-                <li>1231231</li>
-                <li>12321321</li>
-            </ul>
-        </div>
-
-    </div>
-</nav>
-<div class="container">
-    <div class="thumbnail">
-        <div class="picthumbnail"><img src="${pageContext.request.contextPath}/public/imgs/2.png" alt=""></div>
-    </div>
-</div>
-
-
-
-
-<div class="container ">
+<t:main>
+    <jsp:body>
     <div class="container">
-        <div class="  foodcategory">
-            <div class="foodcategorytext">Trending Recipes</div>
+        <div class="thumbnail">
+            <div class="picthumbnail"><img src="${pageContext.request.contextPath}/public/imgs/2.png" alt=""></div>
         </div>
     </div>
 
-    <div class="feed__items ">
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
+    <div class="container ">
+        <div class="container">
+            <div class="  foodcategory">
+                <div class="foodcategorytext">Trending Recipes</div>
             </div>
-        </a>
+        </div>
 
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+        <div class="feed__items ">
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
                 </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
+            </a>
 
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
                 </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
+            </a>
 
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
                 </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
+            </a>
+
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="feed__items pt-3 ">
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+        </div>
     </div>
 
-    <div class="feed__items pt-3 ">
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
+    <div class="container pt-3 text ">
+        <div class="container">
+            <div class="  foodcategory">
+                <div class="foodcategorytext">Recent Recipes</div>
             </div>
-        </a>
+        </div>
 
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+        <div class="feed__items ">
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
                 </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
+            </a>
 
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
                 </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
+            </a>
 
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
                 </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
+            </a>
+
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="feed__items pt-3 ">
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+        </div>
     </div>
-</div>
 
-<div class="container pt-3 text ">
-    <div class="container">
-        <div class="  foodcategory">
+
+
+
+
+
+    <div class="container more-content">
+        <div class="container pt-5 pb-2 foodcategory">
             <div class="foodcategorytext">Recent Recipes</div>
         </div>
-    </div>
-
-    <div class="feed__items ">
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-    </div>
-
-    <div class="feed__items pt-3 ">
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-    </div>
-</div>
-
-
-
-
-
-
-<div class="container more-content">
-    <div class="container pt-5 pb-2 foodcategory">
-        <div class="foodcategorytext">Recent Recipes</div>
-    </div>
-    <div class="feed__items">
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-
-        <a class="trending-item" href="">
-            <div class="trending-item-wrapper">
-                <div class="trending-item-image">
-                    <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                </div>
-                <div class="feed-item__title">Hamburger</div>
-            </div>
-        </a>
-
-    </div>
-
-</div>
-
-
-<div class="d-flex justify-content-center pt-4">
-    <button type="button" class="btn btn-outline-primary show-more-btn">Show more</button>
-
-</div>
-
-
-<div class="container-fluid pt-4">
-    <div class="kj-component ">
-        <div class="udlite-heading-lg kj-notice ">
-                <span>Top companies choose <a href=" " class=" ">Brand</a>
-                    to build ......</span>
-        </div>
-        <div class="kj-partner-logo ">
-            <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/now.jpg " alt=" ">
-            <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/baemin.jpg " alt=" ">
-            <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/facebook.jpg " alt=" ">
-            <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/grab.png " alt=" ">
-            <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/foody.png " alt=" ">
-        </div>
-    </div>
-</div>
-
-
-
-
-<div class="container px-2 text-center footer ">
-    <div>
-        <div class="row ">
-            <div class="col ">
-                <i class="fas fa-school "></i>
-                <small class="d-block mb-3 text-muted ">© 2020 Brand, Inc.</small>
-            </div>
-            <div class="col ">
-                <h5 class="text-left ">
-                    Features
-                </h5>
-                <ul class="list-unstyled text-left text-muted ">
-                    <li><a href=" ">.... for Business</a></li>
-                    <li><a href=" ">Brand....</a></li>
-                    <li>
-                        <a href=" ">Get the app</a></li>
-                    <li>
-                        <a href=" ">About us</a></li>
-                    <li>
-                        <a href=" ">Contact us</a></li>
-                </ul>
-            </div>
-            <div class="col ">
-                <h5 class="text-left ">
-                    Resources
-                </h5>
-                <ul class="list-unstyled text-left text-muted ">
-                    <li><a href=" ">Careers</a></li>
-                    <li><a href=" ">Blog</a></li>
-                    <li><a href=" ">Help and Support</a></li>
-                    <li><a href=" ">Affiliate</a></li>
-
-                </ul>
-            </div>
-            <div class="col ">
-                <h5 class="text-left ">
-                    About
-                </h5>
-                <ul class="list-unstyled text-left text-muted ">
-                    <li><a href=" ">Terms</a></li>
-                    <li><a href=" ">Privacy policy and cookie policy</a></li>
-                    <li><a href=" ">Sitemap</a></li>
-                    <li><a href=" ">Featured courses</a></li>
-
-                </ul>
-            </div>
-
-            <div class="col ">
-                <h5 class="text-center ">Choose your language</h5>
-                <div class="lang-menu ">
-
-                    <div class="selected-lang ">
-                        English
+        <div class="feed__items">
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
                     </div>
-                    <ul>
-                        <li>
-                            <a href="# " class="de ">German</a>
-                        </li>
-                        <li>
-                            <a href=" " class="en ">English</a>
-                        </li>
-                        <li>
-                            <a href=" " class="fr ">French</a>
-                        </li>
-                        <li>
-                            <a href=" " class="ar ">Arabic</a>
-                        </li>
-                    </ul>
-
+                    <div class="feed-item__title">Hamburger</div>
                 </div>
+            </a>
 
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+
+            <a class="trending-item" href="">
+                <div class="trending-item-wrapper">
+                    <div class="trending-item-image">
+                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
+                    </div>
+                    <div class="feed-item__title">Hamburger</div>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="d-flex justify-content-center pt-4">
+        <button type="button" class="btn btn-outline-primary show-more-btn">Show more</button>
+
+    </div>
+
+
+    <div class="container-fluid pt-4">
+        <div class="kj-component ">
+            <div class="udlite-heading-lg kj-notice ">
+                    <span>Top companies choose <a href=" " class=" ">Brand</a>
+                        to build ......</span>
+            </div>
+            <div class="kj-partner-logo ">
+                <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/now.jpg " alt=" ">
+                <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/baemin.jpg " alt=" ">
+                <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/facebook.jpg " alt=" ">
+                <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/grab.png " alt=" ">
+                <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/foody.png " alt=" ">
             </div>
         </div>
     </div>
 
-</div>
 
 
 
+    <div class="container px-2 text-center footer ">
+        <div>
+            <div class="row ">
+                <div class="col ">
+                    <i class="fas fa-school "></i>
+                    <small class="d-block mb-3 text-muted ">© 2020 Brand, Inc.</small>
+                </div>
+                <div class="col ">
+                    <h5 class="text-left ">
+                        Features
+                    </h5>
+                    <ul class="list-unstyled text-left text-muted ">
+                        <li><a href=" ">.... for Business</a></li>
+                        <li><a href=" ">Brand....</a></li>
+                        <li>
+                            <a href=" ">Get the app</a></li>
+                        <li>
+                            <a href=" ">About us</a></li>
+                        <li>
+                            <a href=" ">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col ">
+                    <h5 class="text-left ">
+                        Resources
+                    </h5>
+                    <ul class="list-unstyled text-left text-muted ">
+                        <li><a href=" ">Careers</a></li>
+                        <li><a href=" ">Blog</a></li>
+                        <li><a href=" ">Help and Support</a></li>
+                        <li><a href=" ">Affiliate</a></li>
 
+                    </ul>
+                </div>
+                <div class="col ">
+                    <h5 class="text-left ">
+                        About
+                    </h5>
+                    <ul class="list-unstyled text-left text-muted ">
+                        <li><a href=" ">Terms</a></li>
+                        <li><a href=" ">Privacy policy and cookie policy</a></li>
+                        <li><a href=" ">Sitemap</a></li>
+                        <li><a href=" ">Featured courses</a></li>
 
+                    </ul>
+                </div>
 
+                <div class="col ">
+                    <h5 class="text-center ">Choose your language</h5>
+                    <div class="lang-menu ">
 
+                        <div class="selected-lang ">
+                            English
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="# " class="de ">German</a>
+                            </li>
+                            <li>
+                                <a href=" " class="en ">English</a>
+                            </li>
+                            <li>
+                                <a href=" " class="fr ">French</a>
+                            </li>
+                            <li>
+                                <a href=" " class="ar ">Arabic</a>
+                            </li>
+                        </ul>
 
+                    </div>
 
+                </div>
+            </div>
+        </div>
 
+    </div>
 
-
-
-
-
-
-<script src="./main.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js "></script>
-</body>
-
-</html>
+    </jsp:body>
+</t:main>

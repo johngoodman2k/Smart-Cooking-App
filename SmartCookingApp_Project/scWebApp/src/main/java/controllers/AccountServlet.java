@@ -41,6 +41,10 @@ public class AccountServlet extends HttpServlet {
                     ServletUtils.redirect("/Account/Profile", request, response);
                 }
                 break;
+            case "/ChangePassword":
+                request.setAttribute("hasError", false);
+                ServletUtils.forward("/views/vwAccount/ChangePassword.jsp", request, response);
+                break;
             case "/IsAvailable":
                 String username = request.getParameter("user");
                 Optional<User> user = UserModel.findByUserName(username);
@@ -71,6 +75,8 @@ public class AccountServlet extends HttpServlet {
                 break;
             case "/Update":
                 postUpdate(request, response);
+            case "/ChangePassword":
+                postChangePassword(request, response);
             default:
                 ServletUtils.redirect("/NotFound", request, response);
                 break;
@@ -162,5 +168,55 @@ public class AccountServlet extends HttpServlet {
         User user = new User(id, username,password,name,email,dob,permission);
         UserModel.updateInfomation(user);
         ServletUtils.redirect("/Account/Profile", request, response);
+    }
+    private void postChangePassword(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String newpassword = request.getParameter("newpassword");
+
+
+        Optional<User> user = UserModel.findByUserName(username);
+        if (user.isPresent()) {
+            BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), user.get().getPassword());
+            if (result.verified ) {
+                if(!password.equals(newpassword))
+                {
+                    int id = Integer.parseInt(request.getParameter("id"));
+                    String name = request.getParameter("name");
+                    String email = request.getParameter("email");
+                    password = newpassword;
+                    String bc = BCrypt.withDefaults().hashToString(12, password.toCharArray());
+                    Date dob = new Date();
+                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                    try {
+                        dob = formatter.parse(request.getParameter("dob"));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    int permission = Integer.parseInt(request.getParameter("permission"));
+                    User newuser = new User(id, username, bc, name, email, dob, permission);
+                    UserModel.updateInfomation(newuser);
+
+                    HttpSession session = request.getSession();
+                    String url = (String) session.getAttribute("retUrl");
+                    if (url == null) url = "/Home";
+                    ServletUtils.redirect(url, request, response);
+                }
+                else
+                {
+                    request.setAttribute("hasError", true);
+                    request.setAttribute("errorMessage", "Invalid new password.");
+                    ServletUtils.forward("/views/vwHome/Index.jsp", request, response);
+                }
+            } else {
+                request.setAttribute("hasError", true);
+                request.setAttribute("errorMessage", "Invalid current password.");
+                ServletUtils.forward("/views/vwAccount/vwHome/Index.jsp", request, response);
+            }
+        } else {
+            request.setAttribute("hasError", true);
+            request.setAttribute("errorMessage", "Invalid login.");
+            ServletUtils.forward("/views/vwAccount/Login.jsp", request, response);
+        }
     }
 }
