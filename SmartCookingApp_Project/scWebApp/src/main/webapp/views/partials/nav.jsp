@@ -38,13 +38,9 @@
                             Hi, <b>${authUser.name}</b>!
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Profile">
+                            <a class="dropdown-item" href="${pageContext.request.contextPath}/User/Index">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 Profile
-                            </a>
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/ChangePassword">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                Change password
                             </a>
                             <c:if test="${per == 1}">
                                 <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Home">

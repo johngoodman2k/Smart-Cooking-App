@@ -18,5 +18,8 @@
         <filter-name>AuthenticationFilter</filter-name>
         <url-pattern>/Account/ChangePassword</url-pattern>
         <url-pattern>/Account/Profile</url-pattern>
+        <url-pattern>/Information/*</url-pattern>
+        <url-pattern>/User/*</url-pattern>
+        <url-pattern>/Admin/*</url-pattern>
     </filter-mapping>
 </web-app>

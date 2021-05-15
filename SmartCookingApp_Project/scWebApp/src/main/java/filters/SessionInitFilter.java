@@ -21,10 +21,10 @@ public class SessionInitFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpSession session = request.getSession();
-        if (session.getAttribute("auth") == null) {
-            session.setAttribute("auth", false);
-            session.setAttribute("authUser", new User());
-            session.setAttribute("per", 0);
+        if(session.getAttribute("auth") == null)
+        {
+            session.setAttribute("auth",false);
+            session.setAttribute("authUser",new User());
         }
 
 
