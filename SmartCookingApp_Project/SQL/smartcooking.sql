@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 15/05/2021 14:29:58
+ Date: 23/05/2021 10:42:31
 */
 
 SET NAMES utf8mb4;
@@ -51,20 +51,37 @@ INSERT INTO `category` VALUES (17, 'Đồ uống có gas', 5);
 INSERT INTO `category` VALUES (18, 'Đồ uống bổ sung', 5);
 
 -- ----------------------------
+-- Table structure for evaluate
+-- ----------------------------
+DROP TABLE IF EXISTS `evaluate`;
+CREATE TABLE `evaluate`  (
+  `userID` int NOT NULL,
+  `postID` int NOT NULL,
+  `point` int NOT NULL,
+  `feedback` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`userID`, `postID`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of evaluate
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for post
 -- ----------------------------
 DROP TABLE IF EXISTS `post`;
 CREATE TABLE `post`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `postname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `TinyDes` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `TinyDes` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `FullDes` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   `catID` int NOT NULL,
   `userID` int NOT NULL,
   `updateDate` date NOT NULL,
   `enable` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of post
@@ -75,6 +92,10 @@ INSERT INTO `post` VALUES (4, '1', '1', '<p>1</p>', 6, 2, '2021-05-15', 'true');
 INSERT INTO `post` VALUES (5, '1', '1', '<p>11</p>', 6, 2, '2021-05-15', 'true');
 INSERT INTO `post` VALUES (6, '1', '1', '<p>1</p>', 6, 2, '2021-05-15', 'true');
 INSERT INTO `post` VALUES (7, '2', '2', '<p>2</p>', 6, 2, '2021-05-15', 'true');
+INSERT INTO `post` VALUES (11, '1', '1', '<p>1</p>', 6, 4, '2021-05-23', 'true');
+INSERT INTO `post` VALUES (12, '12', '12', '<p>111</p>', 6, 4, '2021-05-23', 'true');
+INSERT INTO `post` VALUES (13, 'Phá» Chinna', '123321', '<p>OMG I\'M PRo</p>', 6, 4, '2021-05-23', 'true');
+INSERT INTO `post` VALUES (14, 'Chao', '<ol><li>aadasdas</li><li>2asdasd</li><li>33123</li><li>55sfsdfs</li></ol>', '', 6, 12, '2021-05-23', 'true');
 
 -- ----------------------------
 -- Table structure for users
@@ -90,7 +111,7 @@ CREATE TABLE `users`  (
   `office` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `enable` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
@@ -103,5 +124,32 @@ INSERT INTO `users` VALUES (5, 'user1', '$2a$12$YqHdYlpx6mln1VdOEuEU4uPYkktfExee
 INSERT INTO `users` VALUES (7, 'manloxocung', '$2a$12$.ss7mtPrRND/r/YUprjVZeYTkTF9/yswXsPWxb3YVFrfFhVcpkLGm', '', 'man1234dd@gmail.com', '2021-04-26', 'user', 'true');
 INSERT INTO `users` VALUES (8, 'khangkid1234', '$2a$12$N3xmruMkOZUQWJUeh3AZluClKZKhZAlwjtD9ynEUNi.S9GP/dAUjC', 'KhangDang', 'khangkid1234@gmail.com', '2021-05-09', 'user', 'true');
 INSERT INTO `users` VALUES (9, 'hoang123', '$2a$12$fGVn0xlMn5jatNl7/P9iZufLwjEZN1ABkfb8geiR9hK3PTYPW.NO.', 'hoang', 'hoang@gmail.com', '2021-05-05', 'user', 'true');
+INSERT INTO `users` VALUES (10, 'khangkid123456', '$2a$12$16P3DuYb9JDTSV.akgXAK.atLiemG6ZBaBqWR.i4P4suL5BGmeJT6', 'KhangDang', 'khangkid1234dd@gmail.com', '2021-05-04', 'user', 'true');
+INSERT INTO `users` VALUES (11, 'khang123456789', '$2a$12$HHkaAFJOqhS.P43nRtTg9.oTSGI2K33k8YlmGz5fCX1qK7eBuhIf6', 'khang1235', 'khangkid1111234dd@gmail.com', '2021-05-26', 'user', 'true');
+INSERT INTO `users` VALUES (12, 'khang123456dd', '$2a$12$GPLlYsA2AqusAp2GMeVm/uaC6Lz8sPcGVayHFPajPF7TJ1HMg6EGG', 'khang1235', 'khang12345678dd@gmail.com', '2021-05-20', 'user', 'true');
+INSERT INTO `users` VALUES (13, 'khang12345dd', '$2a$12$nl7HejaRAbjU35GHJKvM7.TQciJpS6f3hXiZ7H6XRa1Vdld4MrxXu', 'khang12345dd', 'khang12345dd@gmail.com', '2021-05-26', 'user', 'true');
+
+-- ----------------------------
+-- Table structure for watchlist
+-- ----------------------------
+DROP TABLE IF EXISTS `watchlist`;
+CREATE TABLE `watchlist`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `userID` int NOT NULL,
+  `postID` int NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of watchlist
+-- ----------------------------
+INSERT INTO `watchlist` VALUES (6, 4, 13, '2021-05-23');
+INSERT INTO `watchlist` VALUES (7, 4, 11, '2021-05-23');
+INSERT INTO `watchlist` VALUES (8, 13, 1, '2021-05-23');
+INSERT INTO `watchlist` VALUES (9, 13, 13, '2021-05-23');
+INSERT INTO `watchlist` VALUES (10, 13, 7, '2021-05-23');
+INSERT INTO `watchlist` VALUES (11, 13, 6, '2021-05-23');
+INSERT INTO `watchlist` VALUES (12, 13, 5, '2021-05-23');
 
 SET FOREIGN_KEY_CHECKS = 1;
