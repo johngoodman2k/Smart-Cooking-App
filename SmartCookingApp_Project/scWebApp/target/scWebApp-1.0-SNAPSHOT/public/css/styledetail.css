@@ -1,0 +1,772 @@
+.top-container {
+    background-color: black;
+}
+
+.video-placement {
+    display: flex;
+    justify-content: center;
+}
+
+.text-video {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text-preparation {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text-preparation-items {
+    font-size: 1.125rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.text-ingredient {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text-ingredient-items {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 200;
+    line-height: 1.4;
+    font-size: 1.2rem;
+    margin: 2px 0px;
+}
+
+.recipes-instruction {
+    padding-top: 30px;
+}
+
+.top-container-left {
+    padding-top: 60px;
+}
+
+.top-container-content {
+    color: white;
+}
+
+.udlite-heading-xl {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.6rem;
+}
+
+.udlite-text-md {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 200;
+    line-height: 1.4;
+    font-size: 1.2rem;
+}
+
+.top-container-content-heading {}
+
+.topic-menu-link {
+    color: aquamarine;
+}
+
+.topic-menu-link:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 67.5em) {
+    .paid-course-landing-page__container .course-landing-page__topic-menu .topic-menu {
+        position: relative;
+        top: -.8rem;
+    }
+}
+
+.topic-menu.udlite-breadcrumb {
+    scroll-padding: 2.4rem;
+}
+
+.topic-menu {
+    scroll-padding: 2.4rem;
+}
+
+.topic-menu-link {
+    color: #8ed1dc;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    margin-right: 1rem;
+}
+
+.topic-menu-icon {
+    color: #8ed1dc;
+    width: 0.2rem;
+    height: 0.2rem;
+    margin-bottom: 2rem;
+    padding-right: 1.5rem;
+}
+
+.udlite-breadcrumb {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: .4rem;
+    margin: 0 -.4rem;
+    overflow: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+}
+
+.card-main-content-price-text-1 {
+    color: whitesmoke;
+}
+
+.top-menu-lastupdate-desktop {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 73.75em) {
+    .course-landing-page__topic-menu {
+        max-width: 70rem;
+    }
+}
+
+@media (min-width: 67.5em) {
+    .course-landing-page__topic-menu {
+        max-width: 60rem;
+        margin-left: 4.8rem;
+        margin-right: 14.8rem;
+    }
+}
+
+.component-margin {
+    margin-bottom: 3.2rem;
+}
+
+.course-landing-content {
+    background-color: #fbfbf8;
+    border: 1px solid #dcdacb;
+    border-radius: 4px;
+    padding: 2.4rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 37.56em) {
+    .course-landing-content {
+        padding-bottom: 1.6rem;
+    }
+}
+
+.course-landing-content-heading {
+    margin: 0 2.4rem 1.6rem;
+}
+
+.course-landing-content-wrapper {
+    margin: 0 2.4rem;
+    width: 100%;
+}
+
+.course-landing-content-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.unstyled-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+}
+
+.udlite-block-list .udlite-block-list-item-neutral {
+    color: #3c3b37;
+}
+
+.udlite-block-list .udlite-block-list-item-tight {
+    padding: .4rem 0;
+}
+
+.udlite-block-list .udlite-block-list-item {
+    padding: .8rem 0;
+}
+
+.udlite-block-list .udlite-block-list-item {
+    border-radius: 0;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    letter-spacing: normal;
+    white-space: normal;
+}
+
+.udlite-block-list-content {
+    flex: 1;
+    min-width: 1px;
+}
+
+.udlite-block-list-content-text {
+    display: block!important;
+    display: -webkit-box!important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    color: #3c3b37;
+}
+
+.udlite-text-sm {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 200;
+    line-height: 1.4;
+    font-size: 1rem;
+}
+
+.udlite-block-list-icon {
+    color: #73726c;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 1rem;
+}
+
+.udlite-block-list-icon-gold {
+    color: #DAA520;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 1rem;
+}
+
+.curriculum-sub-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.curriculum-sub-header-content {
+    margin: .8rem 0;
+    display: block;
+}
+
+.udlite-btn {
+    position: relative;
+    align-items: center;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    min-width: 10rem;
+    padding: 0 1.2rem;
+    justify-content: center;
+    user-select: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+
+.udlite-btn-ghost {
+    color: #0f7c90;
+    background-color: transparent;
+    min-width: auto;
+    padding: 0;
+}
+
+.udlite-btn-medium {
+    height: 4rem;
+}
+
+.list-group-item.active {
+    color: black
+}
+
+@media (min-width: 37.56em) {
+    .tab-panel-content {
+        padding: 1.6rem 2.4rem
+    }
+}
+
+.tab-panel-content {
+    border-top: 1px solid #dcdacb;
+    padding: 1.2rem 1.6rem;
+}
+
+.courses-time {
+    margin-left: 230px;
+}
+
+
+/* Student also bought */
+
+.course-comparison-content-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.course-comparison-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 1.6rem 0;
+    position: relative;
+}
+
+.course-landing-content-main {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 0 0 .8rem;
+    white-space: nowrap;
+}
+
+.course-landing-content-main-title {
+    color: #3c3b37;
+    display: block!important;
+    display: -webkit-box!important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.course-landing-content-main-infor {
+    margin: .8rem 0 0;
+    display: flex;
+}
+
+.heading-md {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.2rem;
+}
+
+.course-landing-content-main-infor-time {
+    font-weight: 700;
+    color: #2d8643;
+}
+
+.course-comparison-content {
+    flex: 3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 0 0 2.4rem;
+}
+
+.course-comparison-content-star-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.udlite-star-only {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.star-rating-number {
+    margin-right: .4rem;
+    color: #be5a0e;
+}
+
+.star-color {
+    color: #be5a0e;
+}
+
+.course-comparison-content-numberstudent {
+    display: flex;
+}
+
+.course-comparison-pricetext-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #3c3b37;
+    flex-wrap: wrap;
+}
+
+.udlite-heading-sm {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1rem;
+}
+
+.course-comparison-discount-price {
+    margin: 0 0 .4rem;
+    padding: 0;
+}
+
+.price-text {
+    line-height: 1;
+    padding: .2rem 0;
+    margin-right: .8rem;
+    white-space: nowrap;
+}
+
+.course-comparison-original-price {
+    margin: 0 0 .4rem;
+    padding: 0;
+}
+
+.ogprice-text {
+    line-height: 1;
+    margin-right: .8rem;
+    white-space: nowrap;
+    color: #73726c;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.course-comparison-image-wrapper {
+    border-radius: 4px;
+    order: -1;
+}
+
+.course-comparison-whole-card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* .course-comparison-image {
+    border-radius: 3px;
+    display: block;
+    min-width: 6.4rem;
+} */
+
+.style-instructor {
+    flex-direction: column;
+}
+
+.instructor-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.6rem;
+    padding: 0;
+    position: relative;
+}
+
+@media (min-width: 67.5em) {
+    .in-page-offset-anchor {
+        top: -7.7rem;
+    }
+}
+
+@media (min-width: 37.56em) {
+    .in-page-offset-anchor {
+        top: 0;
+    }
+}
+
+.in-page-offset-anchor {
+    position: relative;
+    top: -4.4rem;
+}
+
+.udlite-heading-lg {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.2rem;
+}
+
+.instructor-heading {
+    margin-bottom: .4rem;
+}
+
+.instructor-job-title {
+    color: #73726c;
+}
+
+.instructor-image {
+    margin-top: .8rem;
+    display: flex;
+}
+
+.instructor-image-link {
+    flex: 0 0 auto;
+    min-width: .1rem;
+    margin: 0 1.6rem 0 0;
+}
+
+.instructor-image-and-stats {
+    width: 11.2rem!important;
+    height: 11.2rem!important;
+}
+
+.udlite-avatar-image {
+    border: 1px solid #dcdacb;
+}
+
+.udlite-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    object-fit: cover;
+    color: #fff;
+}
+
+.show-more-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media (min-width: 37.56em) {
+    .review-summary-widget-container {
+        flex-direction: row;
+    }
+}
+
+.review-summary-widget-container {
+    display: flex;
+    color: #be5a0e;
+}
+
+@media (min-width: 37.56em) {
+    .review-summary-widget-container {
+        flex-direction: row;
+    }
+}
+
+.review-summary-widget-number {
+    font-size: 6.4rem;
+}
+
+@media (min-width: 37.56em) {
+    .review-summary-widget-number {
+        line-height: 1;
+    }
+}
+
+.udlite-heading-xxxl {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 4rem;
+}
+
+.review-summary-widget-stars {
+    display: flex;
+    padding: 0 0 .8rem;
+}
+
+.star-rating-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.star-rating-style {
+    font-size: 20px;
+}
+
+.review-summary-widget-rates {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 37.56em) {
+    .review-summary-widget-rates {
+        padding: 0 0 0 3.2rem;
+    }
+}
+
+.udlite-btn-small {
+    min-width: 8rem;
+    height: 3.4rem;
+}
+
+.udlite-btn-link {
+    height: auto;
+    vertical-align: baseline;
+}
+
+.udlite-heading-xs {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.2rem;
+}
+
+.review-summary-widget-rates-row {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: .8rem;
+    padding: 0;
+    width: 100%;
+}
+
+.review-summary-widget-rate-gauge {
+    display: flex;
+    margin-right: .8rem;
+    min-width: 10rem;
+    flex: 1;
+}
+
+.review-summary-widget-rate-gauge-bg {
+    background: #dcdacb;
+    display: block;
+    height: .8rem;
+    width: 100%;
+}
+
+.review-summary-widget-rate-gauge-fill {
+    background: #73726c;
+    display: block;
+    height: 100%;
+}
+
+.review-summary-widget-rate-percent {
+    display: block;
+    white-space: nowrap;
+    min-width: 4rem;
+    text-align: left;
+    margin-left: .8rem;
+    color: #0f7c90;
+}
+
+.reviews-section-review-container {
+    padding: 1.6rem 0;
+    border-bottom: 1px solid #dcdacb;
+}
+
+@media (min-width: 37.56em) {
+    .reviews-section-review-container {
+        padding: 1.6rem 0 2.4rem;
+    }
+}
+
+.individual-review {
+    display: flex;
+    flex-direction: row;
+}
+
+.individual-review-author-avatar {
+    display: block;
+    padding: 0 2.4rem 0 0
+}
+
+@media (min-width: 37.56em) {
+    .individual-review-author-avatar {
+        display: block;
+        padding: 0 2.4rem 0 0;
+    }
+}
+
+.udlite-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    object-fit: cover;
+    color: #fff;
+}
+
+.individual-review-content {
+    min-width: 1px;
+}
+
+.individual-review-content-name-container {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .8rem;
+}
+
+.individual-review-content-name {
+    margin-right: 1.6rem;
+}
+
+.individual-review-detail {
+    color: #73726c;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: .8rem;
+}
+
+.individual-review-detail-time {
+    margin-left: .8rem;
+}
+
+.review-show-more-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.review-show-more-content {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.individual-review-feedback {
+    margin-top: .2rem;
+}
+
+.individual-review-feedback-title {
+    font-size: 0.8rem;
+    font-weight: 200;
+    line-height: 1.4;
+    color: burlywood;
+}
+
+.review-feedback-actions {
+    align-items: center;
+    display: flex;
+    margin-top: .8rem;
+}
+
+.udlite-btn-icon-round {
+    border-radius: 50%;
+}
+
+.udlite-btn-secondary {
+    color: #0f7c90;
+    background-color: transparent;
+    border: 1px solid #2896a9;
+}
+
+.udlite-btn-icon-medium {
+    padding: 0 1rem;
+    width: 4rem;
+}
+
+.review-feedback-actions-thumb-up {
+    margin-right: .8rem;
+}
+
+.udlite-btn-icon {
+    min-width: auto;
+}

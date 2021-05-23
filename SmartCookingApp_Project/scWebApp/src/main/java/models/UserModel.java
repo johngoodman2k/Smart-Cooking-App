@@ -1,11 +1,14 @@
 package models;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import beans.Post;
 import beans.User;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
+import beans.Watchlist;
 import org.sql2o.Connection;
 import utils.DbUtils;
 
@@ -90,6 +93,34 @@ public class UserModel {
         }
     }
 
+    public static void delete(Watchlist wl){
+        final String sql="DELETE FROM watchlist WHERE userID =:userid and postID =:postid ";
+        try (Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("userid", wl.getUserID())
+                    .addParameter("postid",wl.getPostID())
+                    .executeUpdate();
+        }
+    }
+    public static void add(Watchlist wl){
+        final String sql="INSERT INTO watchlist (userID, postID, date) VALUES (:userID,:postID,:date)";
+        try (Connection con = DbUtils.getConnection()) {
+            con.createQuery(sql)
+                    .addParameter("userID", wl.getUserID())
+                    .addParameter("postID",wl.getPostID())
+                    .addParameter("date",wl.getDate())
+                    .executeUpdate();
+        }
+    }
+    public static List<Post> FindWatchListByUserID(int id){
+        String sql = "SELECT post.id,post.postname,post.TinyDes FROM watchlist,post,users WHERE watchlist.postID = post.id AND users.id = watchlist.userID AND watchlist.userID =:id";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetch(Post.class);
+        }
+
+    }
 
 }
 

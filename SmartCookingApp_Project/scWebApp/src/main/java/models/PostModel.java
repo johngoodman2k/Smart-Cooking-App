@@ -73,4 +73,33 @@ public class PostModel {
                     .executeUpdate();
         }
     }
+    public  static  List<Map<String,Object>> GetFeturePost(){
+        String sql="SELECT post.id,post.postname,post.TinyDes,post.FullDes,post.updateDate,users.`name` as userName,category.`name`as catName,COUNT(evaluate.userID) as num,ROUND(AVG(evaluate.point),2)as point from post left JOIN evaluate ON post.id = evaluate.postID,users,category WHERE users.id = post.userID and post.enable != 'false' and post.catID = category.id GROUP BY post.id DESC Limit 10";
+        try(Connection conn = DbUtils.getConnection())
+        {
+            return conn.createQuery(sql).executeAndFetchTable().asList();
+        }
+    }
+    public static List<Map<String, Object>> GetByID(int id){
+        String sql="SELECT post.id,post.postname,post.TinyDes,post.FullDes,post.updateDate,users.`name` as userName,category.`name`as catName,COUNT(evaluate.userID) as num,ROUND(AVG(evaluate.point),1)as point FROM users,category,post left JOIN evaluate on post.id = evaluate.postID WHERE users.id = post.userID AND post.catID = category.id AND post.id =:id GROUP BY post.id";
+        try(Connection conn = DbUtils.getConnection()){
+            return conn.createQuery(sql)
+                    .addParameter("id",id)
+                    .executeAndFetchTable().asList();
+
+        }
+
+    }
+    public static boolean IsOnWatchList(int userid,int postid)
+    {
+        String sql = "select* from watchlist  where userID=:userid and postID=:postid";
+        try(Connection conn = DbUtils.getConnection()){
+            List<Map<String,Object>> list = conn.createQuery(sql).addParameter("userid",userid)
+                    .addParameter("postid",postid).executeAndFetchTable().asList();
+            if(list.size()==0)
+                return false;
+            else
+                return true;
+        }
+    }
 }

@@ -2,26 +2,28 @@
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="categoriesMenu" scope="request" type="java.util.List<beans.Category>"/>
+<jsp:useBean id="wl" scope="request" type="java.util.List<beans.Post>"/>
 
 <t:main>
     <jsp:attribute name="css">
-         <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
         <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  crossorigin="anonymous">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/styleprofile.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+
     </jsp:attribute>
     <jsp:attribute name="js">
-
-        <script src="https://kit.fontawesome.com/b325eaacc3.js" crossorigin="anonymous"></script>
         <script src="${pageContext.request.contextPath}/public/js/checkInput.js"></script>
         <script src="${pageContext.request.contextPath}/public/js/Admin.js"></script>
         <script src="${pageContext.request.contextPath}/public/js/user.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
         <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/fileinput.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/js/locales/vi.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.3/themes/fa/theme.min.js"></script>
@@ -67,20 +69,37 @@
         var quill2 = new Quill('#editor2', {
             theme: 'snow'
         });
+        var quill3 = new Quill('#editor3', {
+            theme: 'snow'
+        });
+        var quill4 = new Quill('#editor4', {
+            theme: 'snow'
+        });
         quill2.on('text-change',function (delta,source)
         {
             $('#newFullDes').val(quill2.root.innerHTML);
             console.log(quill2.root.innerHTML)
         })
-        quill.on('text-change',function (delta,source)
+        quill3.on('text-change',function (delta,source)
         {
-            $('#fullDes').val(quill.root.innerHTML);
+            $('#tinyDes').val(quill3.root.innerHTML);
         })
-        $('.fuMain').fileinput({
+        quill4.on('text-change',function (delta,source)
+        {
+            $('#newTinyDes').val(quill4.root.innerHTML);
+        })
+        $('#input-b1').fileinput({
             language: 'vi',
             theme: 'fa',
-            // showCaption: false,
-            // showUpload : true,
+            showUpload : false,
+            dropZoneEnabled: false,
+            allowedFileExtensions: ['jpg', 'png', 'gif']
+        });
+        $('#input-b2').fileinput({
+            language: 'vi',
+            theme: 'fa',
+            showCaption: false,
+            showUpload : false,
             dropZoneEnabled: false,
             allowedFileExtensions: ['jpg', 'png', 'gif']
         });
@@ -246,11 +265,16 @@
                             </select>
                         </div>
                         <div class="modal_body_add_post">
-                            <input class="modal-add-post-tinydess" type="text" name="tinyDes" id="tinyDes" placeholder="tinyDes">
+                            <input type="hidden" name="tinyDes" id="tinyDes">
+                            <p class="modal-add-post-font1 ">Ingredients</p>
+                                <div class="modal-add-post-des">
+                                    <div id="editor3">
+                                    </div>
+                                </div>
                         </div>
                         <div class="modal_body_add_post">
                             <p class="modal-add-post-font1 ">Image</p>
-                            <input class="modal-add-post-img" type="file" class="fuMain" name="fuMain" />
+                            <input type="file" class="file" name="input-b1" id="input-b1" />
                         </div>
                         <div class="modal_body_add_post">
                             <input type="hidden" name="fullDes" id="fullDes">
@@ -305,11 +329,17 @@
             <div class="modal edit-tinydes-modal" id="modalChangeTinyDes">
                 <div class="modal-content">
                     <div class="modal-header modal_display_block modal_add_post_head_font">
-                        <p>Edit Tiny Description</p>
+                        <p>Edit Ingredients</p>
                     </div>
                     <form action="${pageContext.request.contextPath}/User/UpdateTinyDes" method="post">
                         <input type="hidden" name="postID" id="editTinydesID">
-                        <input type="text" name="newTinyDes" id="newTinyDes" placeholder="new Tiny Description" autocomplete="off" class="modal-post-input">
+                        <input type="hidden" name="newTinyDes" id="newTinyDes">
+                        <div class="modal_body_add_post">
+                            <div class="modal-add-post-des">
+                                <div id="editor4">
+                                </div>
+                            </div>
+                        </div>
                         <div class="modal-footer">
                             <button class="modal-aplly-button btn a-white" type="submit">Apply</button>
                         </div>
@@ -372,7 +402,7 @@
                     <form action="${pageContext.request.contextPath}/User/UpdateImage" enctype="multipart/form-data" method="post">
                         <input type="hidden" name="postID" id="editImageID">
                         <div class="modal_body_add_post">
-                            <input class="modal-add-post-img1" type="file" class="fuMain" name="fuMain" data-browse-on-zone-click="true"/>
+                            <input  type="file" class="file" name="input-b1" id="input-b2" data-browse-on-zone-click="true"/>
                         </div>
                         <div class="modal-footer">
                             <button class="modal-aplly-button btn a-white" type="submit">Apply</button>
@@ -399,7 +429,7 @@
                                             </button>
                                             <div class="dropdown-menu"  postID="${c.id}">
                                                 <button class="btn text-warning edit-postname-btn">Post Name</button><br>
-                                                <button class="btn text-warning edit-tinydes-btn">Tiny Description</button><br>
+                                                <button class="btn text-warning edit-tinydes-btn">Ingredients</button><br>
                                                 <button class="btn text-warning edit-fulldes-btn">Full Description</button><br>
                                                 <button class="btn text-warning edit-category-btn">Category</button><br>
                                                 <button class="btn text-warning edit-image-btn">Image</button><br>
@@ -409,7 +439,7 @@
                                     </div>
 
                                 </div>
-                                <a class="btn btn-outline-secondary" href="${pageContext.request.contextPath}/User/EditPost?postID=${c.id}">
+                                <a class="btn btn-outline-secondary" href="${pageContext.request.contextPath}/Post/Detail?id=${c.id}">
                                     <i class="fas fa-eye"></i>
                                 </a>
                             </div>
@@ -417,7 +447,34 @@
                     </c:if>
                 </c:forEach>
             </div>
-
+        </div>
+        <div class="container-fluid">
+            <img src="${pageContext.request.contextPath}/public/imgs/imgProfile2.png" class="d-block" height="100%" width="100%" >
+            <div class="title3_vitri">
+                <div class="title2_p">
+                    My WatchList
+                </div>
+            </div>
+            <div class="wl-frame-vitri">
+                <div class="wl-frame">
+                    <section class="wl-p">
+                        <c:forEach items="${wl}" var="c">
+                                <div class="wl-p-card">
+                                    <a href="${pageContext.request.contextPath}/Post/Detail?id=${c.id}">
+                                        <div class="wl-p-image">
+                                            <img src="${pageContext.request.contextPath}/public/image/${c.id}.png">
+                                        </div>
+                                        <div class="wl-p-info">
+                                            <h5>${c.postname}</h5>
+                                            <p>${c.tinyDes}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </a>
+                        </c:forEach>
+                    </section>
+                </div>
+            </div>
         </div>
     </jsp:body>
 </t:main>

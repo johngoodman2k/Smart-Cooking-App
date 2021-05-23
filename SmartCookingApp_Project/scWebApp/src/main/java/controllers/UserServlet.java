@@ -2,6 +2,7 @@ package controllers;
 
 import beans.Post;
 import beans.User;
+import beans.Watchlist;
 import models.PostModel;
 import models.UserModel;
 import utils.ServletUtils;
@@ -13,10 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @WebServlet(name = "UserServlet", urlPatterns="/User/*")
 @MultipartConfig(
@@ -30,6 +28,7 @@ public class UserServlet extends HttpServlet {
         String path = request.getPathInfo();
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("authUser");
+        Date date = Calendar.getInstance().getTime();
         if(!user.getOffice().equals("user"))
         {
 
@@ -39,8 +38,23 @@ public class UserServlet extends HttpServlet {
         switch(path){
             case"/Index":
                 List<Post>posts = PostModel.getAll();
+                List<Post> wl = UserModel.FindWatchListByUserID(user.getId());
                 request.setAttribute("posts",posts);
+                request.setAttribute("wl",wl);
                 ServletUtils.forward("/views/vwUser/Index.jsp",request,response);
+                break;
+            case"/AddWatchList":
+                int idPost = Integer.parseInt(request.getParameter("id"));
+                Watchlist wladd = new Watchlist(-1,user.getId(),idPost,date);
+                UserModel.add(wladd);
+                ServletUtils.redirect("/Post/Detail?"+request.getQueryString(),request,response);
+                break;
+            case"/DeleteWatchList":
+                int idCourseDelete = Integer.parseInt(request.getParameter("id"));
+                Watchlist wldelete = new Watchlist(-1,user.getId(),idCourseDelete,date);
+
+                UserModel.delete(wldelete);
+                ServletUtils.redirect("/Post/Detail?"+request.getQueryString(),request,response);
                 break;
             default:
                 ServletUtils.forward("/NotFound",request,response);
@@ -129,7 +143,9 @@ public class UserServlet extends HttpServlet {
         ServletUtils.redirect("/User/Index",request,response);
     }
     private  void  doPostUpdateEmail(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
-        int ID = Integer.parseInt(request.getParameter("editEmailUserID"));
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("authUser");
+        int ID = user.getId();
         String email = request.getParameter("newEmail");
         UserModel.updateEmail(ID,email);
         updateAuthUser(request,response);
