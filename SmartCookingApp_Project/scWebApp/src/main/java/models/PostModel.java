@@ -51,9 +51,13 @@ public class PostModel {
     }
     public static void delete(int id){
         String sql1 = "Delete from post where id=:id";
+        String sql2 = "DELETE FROM watchlist WHERE postID = :id ";
+        String sql3 = "DELETE FROM evaluate WHERE postID = :id";
         try (Connection conn = DbUtils.getConnection())
         {
             conn.createQuery(sql1).addParameter("id",id).executeUpdate();
+            conn.createQuery(sql2).addParameter("id",id).executeUpdate();
+            conn.createQuery(sql3).addParameter("id",id).executeUpdate();
         }
     }
     public static void Update(int id,Post post)
@@ -102,4 +106,27 @@ public class PostModel {
                 return true;
         }
     }
+    public static List<Post> SearchByUserAndSubCat(String username, int catid)
+    {
+        if(catid != 0 ){
+            String sql = "SELECT post.id, post.postname, post.TinyDes, post.FullDes, post.catID, post.userID, post.updateDate, post.enable FROM category,post,users WHERE category.id=post.catID and post.userID = users.id and users.username like '%"+username+"%' and post.catID = :catid";
+            try(Connection conn = DbUtils.getConnection()){
+                return conn.createQuery(sql).addParameter("catid",catid).executeAndFetch(Post.class);
+            }
+        }
+        else{
+            String sql = "SELECT post.id, post.postname, post.TinyDes, post.FullDes, post.catID, post.userID, post.updateDate, post.enable FROM category,post,users WHERE category.id=post.catID and post.userID = users.id and users.username like '%"+username+"%'";
+            try(Connection conn = DbUtils.getConnection()){
+                return conn.createQuery(sql).executeAndFetch(Post.class);
+            }
+        }
+    }
+    public static List<Post> SearchByUserAndCat(String username,int catid)
+    {
+        String sql = "SELECT post.id, post.postname, post.TinyDes, post.FullDes, post.catID, post.userID, post.updateDate, post.enable FROM category c1 INNER JOIN category c2 ON c1.id = c2.parentCat,post,users WHERE c2.id = post.catID AND users.id = post.userID AND c1.id = :catid and users.username like '%"+username+"%'";
+        try(Connection conn = DbUtils.getConnection()){
+            return conn.createQuery(sql).addParameter("catid",catid).executeAndFetch(Post.class);
+        }
+    }
+
 }

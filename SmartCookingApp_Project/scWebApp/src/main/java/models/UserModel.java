@@ -121,6 +121,35 @@ public class UserModel {
         }
 
     }
-
+    public static List<User> getAllUsersByOffice(String office){
+        String sql = "select* from users where office = :office";
+        try(Connection conn = DbUtils.getConnection()) {
+            return conn.createQuery(sql).addParameter("office", office).executeAndFetch(User.class);
+        }
+    }
+    public static void delete(int ID){
+        String sql = "Delete FROM users where id=:id";
+        String sql2 = "Delete From evaluate where userID=:id";
+        String sql3 = "DELETE FROM watchlist WHERE userID = :id";
+        String sql4 = "Delete from post where userID=:id";
+        try (Connection conn = DbUtils.getConnection()){
+            conn.createQuery(sql).addParameter("id",ID).executeUpdate();
+            conn.createQuery(sql2).addParameter("id",ID).executeUpdate();
+            conn.createQuery(sql3).addParameter("id",ID).executeUpdate();
+            conn.createQuery(sql4).addParameter("id",ID).executeUpdate();
+        }
+    }
+    public static void Enable(int id){
+        String sql ="Update users set enable='true' where id=:id";
+        try(Connection conn = DbUtils.getConnection()){
+            conn.createQuery(sql).addParameter("id",id).executeUpdate();
+        }
+    }
+    public static void Disabled(int id){
+        String sql ="Update users set enable='false' where id=:id";
+        try(Connection conn = DbUtils.getConnection()){
+            conn.createQuery(sql).addParameter("id",id).executeUpdate();
+        }
+    }
 }
 

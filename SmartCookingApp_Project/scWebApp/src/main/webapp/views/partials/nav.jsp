@@ -38,18 +38,17 @@
                             Hi, <b>${authUser.name}</b>!
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/User/Index">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                Profile
-                            </a>
-                            <c:if test="${per == 1}">
-                                <a class="dropdown-item" href="${pageContext.request.contextPath}/Account/Home">
+                            <c:if test="${authUser.office.equals('admin')}">
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/Admin/Index">
                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                    Admin page.
+                                    Profile
                                 </a>
                             </c:if>
-                            <c:if test="${per == 2}">
-
+                            <c:if test="${authUser.office.equals('user')}">
+                                <a class="dropdown-item" href="${pageContext.request.contextPath}/User/Index">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    Profile
+                                </a>
                             </c:if>
 
                             <div class="dropdown-divider"></div>

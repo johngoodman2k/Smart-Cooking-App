@@ -32,7 +32,7 @@ public class UserServlet extends HttpServlet {
         if(!user.getOffice().equals("user"))
         {
 
-            ServletUtils.redirect("/Information",request,response);
+            ServletUtils.redirect("/Home",request,response);
             return;
         }
         switch(path){

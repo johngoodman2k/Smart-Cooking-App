@@ -449,3 +449,18 @@ left: 44%;
     top: 10%;
     left: 40%;
 }
+.post_button_vitri1{
+    position:absolute;
+    top: 20%;
+    left: 15%;
+}
+.card_vitri1{
+    position:absolute;
+    left: 15%;
+    top: 25%;
+}
+.card_frame1{
+    width: auto;
+    height: auto;
+    overflow: auto;
+}

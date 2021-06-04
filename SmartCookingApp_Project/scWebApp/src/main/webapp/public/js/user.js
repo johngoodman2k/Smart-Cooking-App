@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 $('.delete-post-btn').on('click',function(e)
 {
     $('#deletePostID').val($(this).parent().attr('postID'));

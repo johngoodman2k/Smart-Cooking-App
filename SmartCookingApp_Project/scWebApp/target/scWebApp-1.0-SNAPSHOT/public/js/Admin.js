@@ -1,4 +1,5 @@
 // Get the modal
+
 var modalFullName = document.getElementById("modalFullName");
 var modalChangePass = document.getElementById("modalChangePass");
 var modalChangeEmail = document.getElementById("modalEmail");
@@ -10,15 +11,11 @@ var modalChangeTinyDes = document.getElementById("modalChangeTinyDes");
 var modalChangeFullDes = document.getElementById("modalChangeFullDes");
 var modalChangeCategory = document.getElementById("modalChangeCategory");
 var modalChangeImage = document.getElementById("modalChangeImage");
-
 // Get the button that opens the modal
 var btnChangeName = document.getElementById("btnChangeName");
 var btnChangePass = document.getElementById("btnChangePass");
 var btnChangeEmail = document.getElementById("btnChangeEmail");
 var btnChangeDOB = document.getElementById("btnChangeDOB");
-var btnAddPost = document.getElementById("btnAddPost");
-
-
 
 var span = document.getElementsByClassName("close")[0];
 
@@ -38,44 +35,52 @@ btnChangeDOB.onclick = function() {
     modalChangeDOB.style.display = "block";
 }
 
-btnAddPost.onclick = function() {
-    modalAddPost.style.display = "block";
-}
-window.onclick = function(event) {
-    if (event.target == modalFullName) {
-        modalFullName.style.display = "none";
-    }
-    else if(event.target == modalChangePass){
-        modalChangePass.style.display = "none";
-    }
-    else if(event.target == modalChangeEmail){
-        modalChangeEmail.style.display = "none";
-    }
-    else if(event.target == modalChangeDOB){
-        modalChangeDOB.style.display = "none";
-    }
-    else if(event.target == modalAddPost){
-        modalAddPost.style.display = "none";
-    }
-    else if(event.target == modalDeletePost){
-        modalDeletePost.style.display = "none";
-    }
-    else if(event.target == modalChangePostName){
-        modalChangePostName.style.display = "none";
-    }
-    else if(event.target == modalChangeTinyDes){
-        modalChangeTinyDes.style.display = "none";
-    }
-    else if(event.target == modalChangeFullDes){
-        modalChangeFullDes.style.display = "none";
-    }
-    else if(event.target == modalChangeCategory){
-        modalChangeCategory.style.display = "none";
-    }
-    else if(event.target == modalChangeImage){
-        modalChangeImage.style.display = "none";
-    }
-}
+
+
+$('.delete-cat').on('click', function () {
+    $('.delete-cat-modal  #deleteCatID').val($(this).parent().attr('catID'));
+    $('.delete-cat-modal .p-cat-name').html($(this).parent().attr('catName'));
+    $('.delete-cat-modal').css('display', 'block');
+})
+$('.add-cat').on('click', function () {
+    $('.edit-cat-modal .catOrParentID').val($(this).parent().attr('catID'));
+    $('.edit-cat-modal .btn-update-cat').css('display', 'none');
+    $('.edit-cat-modal .btn-add-cat').css('display', 'block');
+    $('.edit-cat-modal').css('display', 'block');
+})
+$('.update-cat').on('click', function () {
+    $('.edit-cat-modal .catOrParentID').val($(this).parent().attr('catID'));
+    $('.edit-cat-modal .btn-update-cat').css('display', 'block');
+    $('.edit-cat-modal .btn-add-cat').css('display', 'none');
+    $('.edit-cat-modal').css('display', 'block');
+})
+$('.delete-post').on('click', function () {
+    $('.delete-post-modal  #postDeleteID').val($(this).parent().attr('postID'));
+    $('.delete-post-modal .p-cat-name').html($(this).parent().attr('postName'));
+    $('.delete-post-modal').css('display', 'block');
+})
+$('.edit-post-disable').on('click',function() {
+    $('#postDisableID').val($(this).parent().attr('postID'));
+    $('.disable-post-modal').css('display', 'block');
+})
+$('.edit-post-enable').on('click',function() {
+    $('#postEnableID').val($(this).parent().attr('postID'));
+    $('.enable-post-modal').css('display', 'block');
+})
+$('.delete-user').on('click', function () {
+    $('.delete-user-modal #userDeleteID').val($(this).parent().attr('userID'));
+    console.log($('.delete-user-modal  #userDeleteID').val());
+    $('.delete-user-modal .p-cat-name').html($(this).parent().attr('userName'));
+    $('.delete-user-modal').css('display', 'block');
+})
+$('.edit-user-enable').on('click',function() {
+    $('#userEnableID').val($(this).parent().attr('userID'));
+    $('.enable-user-modal').css('display', 'block');
+})
+$('.edit-user-disable').on('click',function() {
+    $('#userDisableID').val($(this).parent().attr('userID'));
+    $('.disable-user-modal').css('display', 'block');
+})
 function checkFullName(element) {
     if ($(element).val() == 0) {
         alert("Full name is not empty");

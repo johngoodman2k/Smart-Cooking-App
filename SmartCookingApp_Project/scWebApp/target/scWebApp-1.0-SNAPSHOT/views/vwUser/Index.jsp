@@ -109,6 +109,45 @@
             timepicker: false,
             mask: true,
         });
+        var btnAddPost = document.getElementById("btnAddPost");
+        btnAddPost.onclick = function() {
+            modalAddPost.style.display = "block";
+        }
+        window.onclick = function(event) {
+            if (event.target == modalFullName) {
+                modalFullName.style.display = "none";
+            }
+            else if(event.target == modalChangePass){
+                modalChangePass.style.display = "none";
+            }
+            else if(event.target == modalChangeEmail){
+                modalChangeEmail.style.display = "none";
+            }
+            else if(event.target == modalChangeDOB){
+                modalChangeDOB.style.display = "none";
+            }
+            else if(event.target == modalDeletePost){
+                modalDeletePost.style.display = "none";
+            }
+            else if(event.target == modalChangePostName){
+                modalChangePostName.style.display = "none";
+            }
+            else if(event.target == modalChangeTinyDes){
+                modalChangeTinyDes.style.display = "none";
+            }
+            else if(event.target == modalChangeFullDes){
+                modalChangeFullDes.style.display = "none";
+            }
+            else if(event.target == modalChangeCategory){
+                modalChangeCategory.style.display = "none";
+            }
+            else if(event.target == modalChangeImage){
+                modalChangeImage.style.display = "none";
+            }
+            else if(event.target == modalAddPost){
+                modalAddPost.style.display = "none";
+            }
+        }
     </script>
 
     </jsp:attribute>
