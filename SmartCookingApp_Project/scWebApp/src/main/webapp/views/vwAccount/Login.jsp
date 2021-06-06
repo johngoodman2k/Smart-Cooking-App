@@ -1,75 +1,54 @@
-
 <%@ page contentType="text/html;charset=UTF-8"  %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <style>
-        body{
-            background-image: url('${pageContext.request.contextPath}/public/imgs/MlemMlem.jpg') ;
-
-            background-position: center;
-            background-position-x: left;
-
-            background-size: 1200px;
-        }
-    </style>
+    <title>Login Template</title>
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/public/css/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
-
-<div class="container">
-    <div class="row">
-        <div class="col-9">
-        </div>
-
-        <div class="col-3" >
-
-            <div style=" background-color: white; border-top-right-radius: 25%; ">
-                <div style="margin-top: 90%; text-align: center; padding-top: 10% ; " ><h1 style="color: orange;">SIGN IN</h1></div>
-                <c:if test="${hasError}">
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="color: red">
-                        <strong>Login failed!</strong> ${errorMessage}
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                </c:if>
-                <form method="post" >
-                <div style="margin-top: 15%;padding-bottom: 10%; padding-top: 10%">
-                    <div style="text-align: center;">
-
-                        <div style="margin-bottom: 10%;">
-                            <input id="user" type="text" class="input" name="username" placeholder="Tài khoản">
-                        </div>
-                        <div style="margin-bottom: 10%;">
-                            <input id="pass" type="password" class="input" data-type="password" name="password" placeholder="Mật khẩu">
-                        </div>
-                        <div>
-                            <button type="submit" class="btn btn-outline-warning" style="width: 78%;">Sign In</button>
-                        </div>
-
-                        <div style="padding-top: 10%;">
-                            <span><a href="${pageContext.request.contextPath}/Home"  role="button" >Home</a></span>
-                            <span>&sbquo;</span>
-                            <span><a href="${pageContext.request.contextPath}/Account/Register"  role="button">Register </a></span>
-                        </div>
-
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container">
+        <div class="card login-card">
+            <div class="row no-gutters">
+                <div class="col-md-5">
+                    <img style="padding: 5px; width: 470px" src="${pageContext.request.contextPath}/public/imgs/MlemMlem.jpg" alt="login" class="login-card-img" >
+                </div>
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <p class="login-card-description">Sign into your account</p>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="user" class="sr-only">Tài khoản</label>
+                                <input type="text" name="username" id="user" class="form-control" placeholder="Your Account">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="pass" class="sr-only">Password</label>
+                                <input type="password" name="password" id="pass" class="form-control" data-type="password" placeholder="***********">
+                            </div>
+                            <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Login">
+                        </form>
+                        <a href="#!" class="forgot-password-link">Forgot password?</a>
+                        <p class="login-card-footer-text">Don't have an account? <a href="${pageContext.request.contextPath}/Account/Register" class="text-reset">Register here</a></p>
+                        <a href="${pageContext.request.contextPath}/Home" class="text-reset">Back to Home!</a></p>
+                        <nav class="login-card-footer-nav">
+                            <a href="#!">Terms of use.</a>
+                            <a href="#!">Privacy policy</a>
+                        </nav>
                     </div>
                 </div>
-                </form>
             </div>
-
-
         </div>
     </div>
-</div>
+</main>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
-
 </html>
