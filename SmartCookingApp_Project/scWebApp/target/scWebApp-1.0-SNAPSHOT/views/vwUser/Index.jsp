@@ -75,10 +75,14 @@
         var quill4 = new Quill('#editor4', {
             theme: 'snow'
         });
+        quill.on('text-change',function (delta,source)
+        {
+            $('#fullDes').val(quill.root.innerHTML);
+            console.log(quill.root.innerHTML)
+        })
         quill2.on('text-change',function (delta,source)
         {
             $('#newFullDes').val(quill2.root.innerHTML);
-            console.log(quill2.root.innerHTML)
         })
         quill3.on('text-change',function (delta,source)
         {
@@ -392,8 +396,8 @@
                     <div class="modal-header modal_display_block modal_add_post_head_font">
                         <p>Edit Full Description</p>
                     </div>
-                    <form action="${pageContext.request.contextPath}/User/UpdateTinyDes" method="post">
-                        <input type="hidden" name="postID" id="editFullDescID">
+                    <form action="${pageContext.request.contextPath}/User/UpdateFullDes" method="post">
+                        <input type="hidden" name="postID" id="editFullDesID">
                         <input type="hidden" name="newFullDes" id="newFullDes">
                         <div class="modal_body_add_post">
                             <div class="modal-add-post-des">

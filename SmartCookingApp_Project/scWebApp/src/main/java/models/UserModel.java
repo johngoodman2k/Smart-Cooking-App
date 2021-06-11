@@ -129,12 +129,10 @@ public class UserModel {
     }
     public static void delete(int ID){
         String sql = "Delete FROM users where id=:id";
-        String sql2 = "Delete From evaluate where userID=:id";
         String sql3 = "DELETE FROM watchlist WHERE userID = :id";
         String sql4 = "Delete from post where userID=:id";
         try (Connection conn = DbUtils.getConnection()){
             conn.createQuery(sql).addParameter("id",ID).executeUpdate();
-            conn.createQuery(sql2).addParameter("id",ID).executeUpdate();
             conn.createQuery(sql3).addParameter("id",ID).executeUpdate();
             conn.createQuery(sql4).addParameter("id",ID).executeUpdate();
         }

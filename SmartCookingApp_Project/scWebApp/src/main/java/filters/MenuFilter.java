@@ -1,4 +1,4 @@
-package filter;
+package filters;
 
 import beans.Category;
 import models.CategoryModel;

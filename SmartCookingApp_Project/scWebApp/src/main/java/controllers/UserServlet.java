@@ -23,6 +23,7 @@ import java.util.*;
         maxRequestSize = 100 * 1024 * 1024
 )
 public class UserServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo();
@@ -64,6 +65,8 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         String path = request.getPathInfo();
         switch (path){
             case "/UpdateEmail":
@@ -178,7 +181,7 @@ public class UserServlet extends HttpServlet {
         int catid = Integer.parseInt(request.getParameter("catID"));
         int userid = authUser.getId();
         Date updateDate = Calendar.getInstance().getTime();
-        PostModel.add(new Post(-1,userid,catid,postname,tinydes,fulldes,"true",updateDate));
+        PostModel.add(new Post(-1,userid,catid,postname,tinydes,fulldes,"false",updateDate));
         for (Part part : request.getParts()) {
             String contentDisp = part.getHeader("content-disposition");
             String[] items = contentDisp.split(";");
@@ -230,7 +233,7 @@ public class UserServlet extends HttpServlet {
         String fulldes = request.getParameter("newFullDes");
         Post post =PostModel.findByID(id).get();
         post.setUpdateDate(Calendar.getInstance().getTime());
-        post.setTinyDes(fulldes);
+        post.setFullDes(fulldes);
         PostModel.Update(id,post);
     }
     private void doPostUpdatePostCategory(HttpServletRequest request,HttpServletResponse response)
@@ -243,10 +246,10 @@ public class UserServlet extends HttpServlet {
         PostModel.Update(id,post);
     }
     private void doPostUpdateImage(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
-        String postID = request.getParameter("postID");
-        Post post =PostModel.findByID(Integer.parseInt(postID)).get();
+        int postID = Integer.parseInt(request.getParameter("postID"));
+        Post post =PostModel.findByID(postID).get();
         post.setUpdateDate(Calendar.getInstance().getTime());
-        PostModel.Update(Integer.parseInt(postID),post);
+        PostModel.Update(postID,post);
         for (Part part : request.getParts()) {
             String contentDisp = part.getHeader("content-disposition");
             String[] items = contentDisp.split(";");

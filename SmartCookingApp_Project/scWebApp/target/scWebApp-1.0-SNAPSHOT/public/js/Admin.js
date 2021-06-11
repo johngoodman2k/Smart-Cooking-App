@@ -11,6 +11,8 @@ var modalChangeTinyDes = document.getElementById("modalChangeTinyDes");
 var modalChangeFullDes = document.getElementById("modalChangeFullDes");
 var modalChangeCategory = document.getElementById("modalChangeCategory");
 var modalChangeImage = document.getElementById("modalChangeImage");
+
+
 // Get the button that opens the modal
 var btnChangeName = document.getElementById("btnChangeName");
 var btnChangePass = document.getElementById("btnChangePass");

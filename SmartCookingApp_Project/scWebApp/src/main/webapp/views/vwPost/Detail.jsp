@@ -15,214 +15,180 @@
         <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
     </jsp:attribute>
     <jsp:body>
-        <div class="container-fluid top-container   ">
-            <div class="container">
-                <div class="row">
-                    <div class="col top-container-left ">
+        <c:choose>
+            <c:when test="${posts.enable == true || authUser.office.equals('admin')}">
+                <div class="container-fluid top-container   ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col top-container-left ">
 
-                        <div class="top-container-content">
+                                <div class="top-container-content">
 
-                            <div class="">
-                                <h1 class="pt-2 udlite-heading-md top-container-content-heading">${posts.get(0).get("postname")}</h1>
-                            </div>
+                                    <div class="">
+                                        <h1 class="pt-2 udlite-heading-md top-container-content-heading">${posts.postname}</h1>
+                                    </div>
 
-                            <div class="card-main-content-instructor "> <small style="color: white;"> Created by
-                                <a href=" " class="topic-menu-link">Mr.John dam sau</a>
-                            </small>
-                            </div>
-                            <div class="top-menu-lastupdate-desktop">
-                                <div>
-                                    <span><i class="fas fa-exclamation-circle"></i></span>
-                                    <span class="pr-4">Last updated 1/2021</span>
-                                    <span><i class="fas fa-globe"></i></span>
-                                    <span>VietNam</span>
-                                </div>
+                                    <div class="card-main-content-instructor "> <small style="color: white;"> Created by
+                                        <a href=" " class="topic-menu-link">${users.name}</a>
+                                    </small>
+                                    </div>
+                                    <div class="top-menu-lastupdate-desktop">
+                                        <div>
+                                            <span><i class="fas fa-exclamation-circle"></i></span>
+                                            <span class="pr-4">Last updated 1/2021</span>
+                                            <span><i class="fas fa-globe"></i></span>
+                                            <span>VietNam</span>
+                                        </div>
 
-                            </div>
+                                    </div>
 
-                            <div class="pb-5 pt-2">
-
-
-                                <c:choose>
-                                    <c:when test="${isWatchList == false}">
-                                        <a class="btn btn-outline-light" href="${pageContext.request.contextPath}/User/AddWatchList?id=${posts.get(0).get("id")}" role="button" >
-                                            WishList
-                                            <i class="fas fa-heart"></i>
-                                        </a>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <a class="btn btn-outline-light" href="${pageContext.request.contextPath}/User/DeleteWatchList?id=${posts.get(0).get("id")}" role="button" >
-                                            WishList
-                                            <i class="fas fa-heart text-danger"></i>
-                                        </a>
-                                    </c:otherwise>
-                                </c:choose>
+                                    <div class="pb-5 pt-2">
 
 
-                                <span>
+                                        <c:choose>
+                                            <c:when test="${isWatchList == false}">
+                                                <a class="btn btn-outline-light" href="${pageContext.request.contextPath}/User/AddWatchList?id=${posts.id}" role="button" >
+                                                    WishList
+                                                    <i class="fas fa-heart"></i>
+                                                </a>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <a class="btn btn-outline-light" href="${pageContext.request.contextPath}/User/DeleteWatchList?id=${posts.id}" role="button" >
+                                                    WishList
+                                                    <i class="fas fa-heart text-danger"></i>
+                                                </a>
+                                            </c:otherwise>
+                                        </c:choose>
+
+
+                                        <span>
                                 <button type="button" class="btn btn-outline-light">Share
                                     <i class="far fa-share-square pl-2"></i>
                                 </button>
                             </span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col">
-                        <img src="${pageContext.request.contextPath}/public/image/${posts.get(0).get("id")}.png">
-                </div>
-            </div>
-        </div>
-        </div>
-
-        <div class="container pt-2 ">
-            <div class="course-landing-page__topic-menu component-margin">
-                <h2 class="udlite-heading-xl">Công thức(Ingredients)</h2>
-                <p>${posts.get(0).get("tinydes")}</p>
-            </div>
-        </div>
-
-
-        <div class="container pt-2 ">
-            <div class="course-landing-page__topic-menu component-margin">
-                <h2 class="udlite-heading-xl">Blog</h2>
-                <p>${posts.get(0).get("fulldes")}</p>
-            </div>
-
-        </div>
-
-
-        <div class="container ">
-            <div class="course-landing-page__topic-menu component-margin">
-                <div class="style-instructors">
-                    <h2 class="udlite-heading-xl">Instructor</h2>
-                    <div class="instructor-wrapper">
-                        <span class="in-page-offset-anchor"></span>
-                        <div>
-                            <div class="udlite-heading-lg instructor-heading">
-                                <a href="">Mr.John Dam Sau</a>
-                            </div>
-                            <div class="instructor-job-title udlite-text-md">Head of Data Science, Pierian Data Inc.</div>
-                        </div>
-                        <div class="instructor-image">
-                            <a href="" class="instructor-image-link">
-                                <img src="imgs/john.jpg" class="instructor-image-and-stats udlite-avatar-image udlite-avatar" width="64" height="64" alt="">
-                            </a>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="udlite-text-sm udlite-block-list udlite-block-list-item udlite-block-list-item-neutral udlite-block-list-item-tight">
-                                        <div class="udlite-block-list-content">
-                                        <span class="udlite-block-list-content-text"><i class="fas fa-star udlite-block-list-icon-gold"></i>
-                                            4.6 Instructor Rating
-                                        </span>
-                                        </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="udlite-text-sm udlite-block-list udlite-block-list-item udlite-block-list-item-neutral udlite-block-list-item-tight">
-                                        <div class="udlite-block-list-content">
-                                        <span class="udlite-block-list-content-text"><i class="fas fa-medal udlite-block-list-icon-gold"></i>
-                                            1,699,985 Reviews
-                                        </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="udlite-text-sm udlite-block-list udlite-block-list-item udlite-block-list-item-neutral udlite-block-list-item-tight">
-                                        <div class="udlite-block-list-content">
-                                        <span class="udlite-block-list-content-text"><i class="fas fa-user-friends udlite-block-list-icon-gold"></i>
-                                            12,142,645 Students
-                                        </span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="udlite-text-sm udlite-block-list udlite-block-list-item udlite-block-list-item-neutral udlite-block-list-item-tight">
-                                        <div class="udlite-block-list-content">
-                                        <span class="udlite-block-list-content-text"><i class="fas fa-play-circle udlite-block-list-icon-gold"></i>
-                                            20 Blogs
-                                        </span>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-
-                        <div class="show-more-container">
-                            <span id="" data-type="checkbox" data-checked style="display: none;"></span>
-
-                            <div>
-                                <div class="udlite-text-sm instructor-description">
-                                    <p> Ông là một đầu bếp tài năng và thành công trên nước Mỹ với các chuỗi nhà hàng nổi tiếng đồng thời ông cũng là giảng viên giảng dạy tại trường dạy nấu ăn nổi tiếng Culinary Institues of America. Ông cũng là đầu bếp Việt
-                                        Nam đầu tiên ở Mỹ đoạt danh hiệu đầu bếp xuất sắc nhất New York do New York Times bình chọn và năm 2003. Ông được xem là " Người tạo hương vị" trong làng ẩm thực.</p>
                                 </div>
+
+                            </div>
+                            <div class="col">
+                                <img src="${pageContext.request.contextPath}/public/image/${posts.id}.png">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-
-        <div class="container">
-        <div class="mb-2">
-            <h2 class="udlite-heading-xl ">Reviews</h2>
-        </div>
-        <div>
-        <div>
-            <div class="reviews-section-review-container">
-                <div class="individual-review">
-                    <div class="individual-review-author-avatar">
-                        <div class="udlite-avatar udlite-heading-md" style="width: 4.8rem; height: 4.8rem; background: rgb(40, 150, 169);">SH</div>
+                <div class="container pt-2 ">
+                    <div class="course-landing-page__topic-menu component-margin">
+                        <h2 class="udlite-heading-xl" style="padding: 8px 0px">Công thức(Ingredients)</h2>
+                        <p>${posts.getTinyDes()}</p>
                     </div>
-                    <div class="individual-review-content">
-                        <div class="individual-review-content-name-container">
-                            <div class="udlite-heading-sm individual-review-content-name"> Son Heung Min</div>
-                        </div>
-                        <div class="individual-review-detail">
-                                <span class="star-rating-wrapper ">
-                                    <i class="fas fa-star star-rating-style star-color"></i>
-                                    <i class="fas fa-star star-rating-style star-color"></i>
-                                    <i class="fas fa-star star-rating-style star-color"></i>
-                                    <i class="fas fa-star star-rating-style star-color"></i>
-                                    <i class="fas fa-star star-rating-style star-color"></i>
-                                </span>
+                </div>
 
-                            <span class="udlite-text-sm individual-review-detail-time">2 weeks ago</span>
+
+                <div class="container pt-2 ">
+                    <div class="course-landing-page__topic-menu component-margin">
+                        <h2 class="udlite-heading-xl">Blog</h2>
+                        <p>${posts.getFullDes()}</p>
+                    </div>
+
+                </div>
+
+                <div class="container-fluid pt-4">
+                    <div class="kj-component ">
+                        <div class="udlite-heading-lg kj-notice ">
+                            <span>Top companies choose <a href=" " class=" ">Brand</a>
+                            to build ......</span>
                         </div>
-                        <div class="review-show-more-container">
-                            <span></span>
-                            <div class="review-show-more-content" style="max-height: 100px;">
-                                <div>
-                                    <div class="udlite-text-sm" style="color: #3c3b37;">
-                                        <p>Thay dep trai ma con giang bai hay nua</p>
-                                    </div>
-                                </div>
+                        <div class="kj-partne r-logo ">
+                            <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/now.jpg " alt=" ">
+                            <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/baemin.jpg " alt=" ">
+                            <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/facebook.jpg " alt=" ">
+                            <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/grab.png " alt=" ">
+                            <img width="80 " height="80 " class="ml-2 " src="${pageContext.request.contextPath}/public/imgs/foody.png " alt=" ">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container px-2 text-center footer ">
+                    <div>
+                        <div class="row ">
+                            <div class="col ">
+                                <i class="fas fa-school "></i>
+                                <small class="d-block mb-3 text-muted ">© 2020 Brand, Inc.</small>
                             </div>
-                        </div>
+                            <div class="col ">
+                                <h5 class="text-left ">
+                                    Features
+                                </h5>
+                                <ul class="list-unstyled text-left text-muted ">
+                                    <li><a href=" ">.... for Business</a></li>
+                                    <li><a href=" ">Brand....</a></li>
+                                    <li>
+                                        <a href=" ">Get the app</a></li>
+                                    <li>
+                                        <a href=" ">About us</a></li>
+                                    <li>
+                                        <a href=" ">Contact us</a></li>
+                                </ul>
+                            </div>
+                            <div class="col ">
+                                <h5 class="text-left ">
+                                    Resources
+                                </h5>
+                                <ul class="list-unstyled text-left text-muted ">
+                                    <li><a href=" ">Careers</a></li>
+                                    <li><a href=" ">Blog</a></li>
+                                    <li><a href=" ">Help and Support</a></li>
+                                    <li><a href=" ">Affiliate</a></li>
 
-                        <div class="individual-review-feedback">
-                            <div>
-                                <p class="individual-review-feedback-title"> Was this review helpful?</p>
-                                <div class="review-feedback-actions">
-                                    <button class="udlite-btn udlite-btn-medium udlite-btn-icon-round udlite-btn-secondary udlite-btn-icon-medium udlite-btn-icon udlite-text-md  review-feedback-actions-thumb-up">
-                                        <i class="far fa-thumbs-up" ></i>
-                                    </button>
+                                </ul>
+                            </div>
+                            <div class="col ">
+                                <h5 class="text-left ">
+                                    About
+                                </h5>
+                                <ul class="list-unstyled text-left text-muted ">
+                                    <li><a href=" ">Terms</a></li>
+                                    <li><a href=" ">Privacy policy and cookie policy</a></li>
+                                    <li><a href=" ">Sitemap</a></li>
+                                    <li><a href=" ">Featured courses</a></li>
 
-                                    <button class="udlite-btn udlite-btn-medium udlite-btn-icon-round udlite-btn-secondary udlite-btn-icon-medium udlite-btn-icon udlite-text-md  review-feedback-actions-thumb-up">
-                                        <i class="far fa-thumbs-down" ></i>
-                                    </button>
+                                </ul>
+                            </div>
 
-                                    <button class="udlite-btn-ghost udlite-btn-medium udlite-btn udlite-text-sm">
-                                        <span>Report</span>
-                                    </button>
+                            <div class="col ">
+                                <h5 class="text-center ">Choose your language</h5>
+                                <div class="lang-menu ">
+
+                                    <div class="selected-lang ">
+                                        English
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="# " class="de ">German</a>
+                                        </li>
+                                        <li>
+                                            <a href=" " class="en ">English</a>
+                                        </li>
+                                        <li>
+                                            <a href=" " class="fr ">French</a>
+                                        </li>
+                                        <li>
+                                            <a href=" " class="ar ">Arabic</a>
+                                        </li>
+                                    </ul>
+
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </c:when>
+            <c:otherwise>
+                <h4 style="color: cornflowerblue"> Trang này chưa được kiểm duyệt</h4>
+            </c:otherwise>
+        </c:choose>
+
     </jsp:body>
 </t:main>

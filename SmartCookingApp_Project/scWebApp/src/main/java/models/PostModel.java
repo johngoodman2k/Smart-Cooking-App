@@ -52,12 +52,10 @@ public class PostModel {
     public static void delete(int id){
         String sql1 = "Delete from post where id=:id";
         String sql2 = "DELETE FROM watchlist WHERE postID = :id ";
-        String sql3 = "DELETE FROM evaluate WHERE postID = :id";
         try (Connection conn = DbUtils.getConnection())
         {
             conn.createQuery(sql1).addParameter("id",id).executeUpdate();
             conn.createQuery(sql2).addParameter("id",id).executeUpdate();
-            conn.createQuery(sql3).addParameter("id",id).executeUpdate();
         }
     }
     public static void Update(int id,Post post)
@@ -76,23 +74,6 @@ public class PostModel {
                     .addParameter("id",id)
                     .executeUpdate();
         }
-    }
-    public  static  List<Map<String,Object>> GetFeturePost(){
-        String sql="SELECT post.id,post.postname,post.TinyDes,post.FullDes,post.updateDate,users.`name` as userName,category.`name`as catName,COUNT(evaluate.userID) as num,ROUND(AVG(evaluate.point),2)as point from post left JOIN evaluate ON post.id = evaluate.postID,users,category WHERE users.id = post.userID and post.enable != 'false' and post.catID = category.id GROUP BY post.id DESC Limit 10";
-        try(Connection conn = DbUtils.getConnection())
-        {
-            return conn.createQuery(sql).executeAndFetchTable().asList();
-        }
-    }
-    public static List<Map<String, Object>> GetByID(int id){
-        String sql="SELECT post.id,post.postname,post.TinyDes,post.FullDes,post.updateDate,users.`name` as userName,category.`name`as catName,COUNT(evaluate.userID) as num,ROUND(AVG(evaluate.point),1)as point FROM users,category,post left JOIN evaluate on post.id = evaluate.postID WHERE users.id = post.userID AND post.catID = category.id AND post.id =:id GROUP BY post.id";
-        try(Connection conn = DbUtils.getConnection()){
-            return conn.createQuery(sql)
-                    .addParameter("id",id)
-                    .executeAndFetchTable().asList();
-
-        }
-
     }
     public static boolean IsOnWatchList(int userid,int postid)
     {
@@ -128,5 +109,19 @@ public class PostModel {
             return conn.createQuery(sql).addParameter("catid",catid).executeAndFetch(Post.class);
         }
     }
-
+    public static List<Post> findByCatID(int catID) {
+        String sql = "select * from post where CatID = :CatID";
+        try (Connection con = DbUtils.getConnection()) {
+            return con.createQuery(sql)
+                    .addParameter("CatID", catID)
+                    .executeAndFetch(Post.class);
+        }
+    }
+    public static List<Post> SearchPost(String postname)
+    {
+        String sql = "SELECT * FROM post WHERE post.postname like '%"+postname+"%'";
+        try(Connection conn = DbUtils.getConnection()){
+            return conn.createQuery(sql).executeAndFetch(Post.class);
+        }
+    }
 }

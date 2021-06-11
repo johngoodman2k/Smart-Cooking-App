@@ -4,97 +4,62 @@
 
 <t:main>
     <jsp:body>
+    <div class="container-fluid">
+        <div class="thumbnail" style="background-color: red">
+            <img style="width: 100%;height: 100%" src="${pageContext.request.contextPath}/public/imgs/hinhnen.jpg" alt="">
+            <div class="picthumbnail" style="position: absolute">
+                <div class="row">
+                    <div class="col-sm-6" style="padding: 8px 8px">
+                        <div style="width: auto; height: auto;text-align: center"><img style="height: 400px;width: auto" src="${pageContext.request.contextPath}/public/imgs/hinhnen2.png" alt=""></div>
+                    </div>
+                    <div class="col-sm-6" style="padding: 8px 8px;text-align: center">
+                        <div class="shadowd-i">
+                            <div id="demo" class="carousel slide" data-ride="carousel" style="border: 1px solid #fad390">
+                                <ul class="carousel-indicators">
+                                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                    <li data-target="#demo" data-slide-to="1"></li>
+                                    <li data-target="#demo" data-slide-to="2"></li>
+
+                                </ul>
+                                <div class="carousel-inner">
+                                    <a class="carousel-item active" href="${pageContext.request.contextPath}/Post/Detail?id=22">
+                                        <img src="${pageContext.request.contextPath}/public/image/22.png" alt="" width="1100" height="500">
+                                        <div class="carousel-caption">
+                                            <h3>${posts.get(0).getPostname()}</h3>
+                                            <p style="color: black">See more!</p>
+                                        </div>
+                                    </a>
+                                    <c:forEach items="${posts}" var="c" begin="1" end="2">
+                                        <c:choose>
+                                            <c:when test="${c.enable == true}">
+                                                <a class="carousel-item" href="${pageContext.request.contextPath}/Post/Detail?id=${c.id}">
+                                                    <img src="${pageContext.request.contextPath}/public/image/${c.id}.png" alt="" width="1100" height="500">
+                                                    <div class="carousel-caption">
+                                                        <h3>${c.postname}</h3>
+                                                        <p style="color: black">See more!</p>
+                                                    </div>
+                                                </a>
+                                            </c:when>
+                                        </c:choose>
+                                    </c:forEach>
+
+
+                                </div>
+                                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#demo" data-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
     <div class="container">
-        <div class="thumbnail">
-            <div class="picthumbnail"><img src="${pageContext.request.contextPath}/public/imgs/2.png" alt=""></div>
-        </div>
-    </div>
-
-    <div class="container ">
-        <div class="container">
-            <div class="  foodcategory">
-                <div class="foodcategorytext">Trending Recipes</div>
-            </div>
-        </div>
-
-        <div class="feed__items ">
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-        </div>
-
-        <div class="feed__items pt-3 ">
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="container pt-3 text ">
         <div class="container">
             <div class="  foodcategory">
                 <div class="foodcategorytext">Recent Recipes</div>
@@ -102,136 +67,26 @@
         </div>
 
         <div class="feed__items ">
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-        </div>
-
-        <div class="feed__items pt-3 ">
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
+            <c:forEach items="${posts}" var="c" begin="0" end="7">
+                <c:choose>
+                    <c:when test="${c.enable == true}">
+                        <a class="trending-item" href="${pageContext.request.contextPath}/Post/Detail?id=${c.id}">
+                            <div class="trending-item-wrapper">
+                                <div class="trending-item-image">
+                                    <img src="${pageContext.request.contextPath}/public/image/${c.id}.png" style="width: 255px; height: 255px;" alt="">
+                                </div>
+                                <div class="feed-item__title">${c.postname}</div>
+                            </div>
+                        </a>
+                    </c:when>
+                </c:choose>
+            </c:forEach>
         </div>
     </div>
 
 
-
-
-
-
-    <div class="container more-content">
-        <div class="container pt-5 pb-2 foodcategory">
-            <div class="foodcategorytext">Recent Recipes</div>
-        </div>
-        <div class="feed__items">
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-            <a class="trending-item" href="">
-                <div class="trending-item-wrapper">
-                    <div class="trending-item-image">
-                        <img src="${pageContext.request.contextPath}/public/imgs/2.png" style="width: 255px; height: 255px;" alt="">
-                    </div>
-                    <div class="feed-item__title">Hamburger</div>
-                </div>
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <div class="d-flex justify-content-center pt-4">
-        <button type="button" class="btn btn-outline-primary show-more-btn">Show more</button>
-
+    <div class="d-flex justify-content-center pt-4" style="margin: 30px 0px">
+        <a href="${pageContext.request.contextPath}/Post/ByCat?id=7"><button type="button" class="btn btn-outline-primary show-more-btn">Show more</button></a>
     </div>
 
 
@@ -328,7 +183,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     </jsp:body>

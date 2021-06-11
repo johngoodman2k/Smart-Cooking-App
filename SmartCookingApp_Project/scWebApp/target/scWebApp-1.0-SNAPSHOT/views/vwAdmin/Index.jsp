@@ -68,11 +68,6 @@
         var modalDisableUser = document.getElementById("modalDisableUser");
         var modalEnableUser = document.getElementById("modalEnableUser");
 
-        var btnEditCat = document.getElementById("btnEditCat");
-
-        btnEditCat.onclick = function() {
-            modalEditCat.style.display = "block";
-        }
         window.onclick = function(event) {
             if (event.target == modalFullName) {
                 modalFullName.style.display = "none";
@@ -257,9 +252,6 @@
                 <div class="title2_p">
                     Add Category
                 </div>
-                <button class="btn add-cat" type="button" id="btnEditCat">
-                    <i class="fa fa-plus-square text-info" ></i>
-                </button>
             </div>
         <!-- Edit Cat -->
         <div class="modal edit-cat-modal" id="modalEditCat">
@@ -481,7 +473,7 @@
                         <c:forEach items="${posts}" var="c">
                             <tr>
                                 <td class="d-flex justify-content-between" style="color:#576574; font-weight: bold;">
-                                        ${c.postname}
+                                    <a style="color:#576574; font-weight: bold;" href="${pageContext.request.contextPath}/Post/Detail?id=${c.id}">${c.postname}</a>
                                     <div postID="${c.id}" postName="Design">
                                         <button type="button" class="btn text-danger delete-post">
                                             <i class="fas fa-minus"></i>

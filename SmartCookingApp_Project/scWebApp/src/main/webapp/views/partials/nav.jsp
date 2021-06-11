@@ -6,7 +6,7 @@
     <div class="nav-bar__background">
         <ul aria-label="Primary navigation bar" class="nav-bar__primary-menu xs-flex xs-flex-align-center xs-mx-auto xs-pl2 xs-pr1 sm-pr2 list-unstyled">
             <li class="xs-relative list-unstyled xs-mr1 lg-mr3">
-                <a class="nav-item nav-logo" href=""><img src="${pageContext.request.contextPath}/public/imgs/2.png" class="tasty-logo xs-mt1" alt=""></a>
+                <a class="nav-item nav-logo" href="${pageContext.request.contextPath}/Home"><img src="${pageContext.request.contextPath}/public/imgs/logo.png" class="tasty-logo xs-mt1" alt="" style="width: auto"></a>
             </li>
 
             <li class="nav-item list-unstyled"><a aria-label="Home" class="top-level-nav-link nav-item xs-text-4 md-text-2 extra-bold xs-px1 xs-py2 lg-p2 xs-hide md-block" href="${pageContext.request.contextPath}/Home">Home</a></li>
@@ -15,16 +15,16 @@
             <li class="nav-menu-container xs-inline-block xs-static md-relative xs-px1 xs-py2 lg-p2 xs-text-4 md-text-2 list-unstyled" id="nav-menu-container">
 
 
-                <button aria-label="" aria-expanded="false" aria-haspopup="true" class="test1 recipe-nav-toggle button--clear nav-item xs-relative md-block extra-bold">
-                    Recipes
+                <button aria-label="" aria-expanded="false" aria-haspopup="true" class="test1 recipe-nav-toggle button--clear nav-item xs-relative md-block extra-bold" >
+                    <a href="${pageContext.request.contextPath}/Post/ByCat?id=7" style="color: black">Recipes</a>
                 </button>
             </li>
 
             <li class="srch md-col-3 xs-relative list-unstyled">
-                <form autocomplete="off" id="search-form" novalidate="" class="i-amphtml-form">
-                    <div class="srch-wrap"><button aria-label="Open search bar input" class="button--clear srch-icon-wrapper" type="button"><i class="fas fa-search ml-3"></i></button>
+                <form action="${pageContext.request.contextPath}/Post/Search" autocomplete="off" id="search-form" novalidate="" class="i-amphtml-form" method="get">
+                    <div class="srch-wrap"><button aria-label="Open search bar input" class="button--clear srch-icon-wrapper" type="submit"><i class="fas fa-search ml-3"></i></button>
                         <input type="text" aria-label="Search" class="srch-input offset-srch" id="search" name="search" placeholder="Search " tabindex="0" value=""><button aria-label="Clear Search" class="button--clear clear-search offset-srch xs-hide"
-                                                                                                                                                                            type="button"><svg class="xs-inline-block"><use xmlns:xlink="" xlink:href="#x"></use></svg></button></div>
+                                                                                                                                                                            type="submit"><svg class="xs-inline-block"><use xmlns:xlink="" xlink:href="#x"></use></svg></button></div>
                 </form>
             </li>
             <c:choose>
