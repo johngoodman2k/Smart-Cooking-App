@@ -27,6 +27,14 @@
                 <div class="col-md-7">
                     <div class="card-body">
                         <p class="login-card-description">Sign into your account</p>
+                        <c:if test="${hasError}">
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert" style="color: red">
+                                <strong>Login failed!</strong> ${errorMessage}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </c:if>
                         <form method="post">
                             <div class="form-group">
                                 <label for="user" class="sr-only">Tài khoản</label>

@@ -55,7 +55,7 @@ public class AdminServlet extends HttpServlet {
                 ServletUtils.forward("/views/vwAdmin/Index.jsp",request,response);
                 break;
             default:
-                ServletUtils.redirect("/notFond",request,response);
+                ServletUtils.redirect("/NotFond",request,response);
                 break;
         }
     }
@@ -74,6 +74,7 @@ public class AdminServlet extends HttpServlet {
                 break;
             case "/UpdateNameCategory":
                 doPostUpdateNameCategory(request, response);
+                break;
             case "/DeletePost":
                 doPostDeletePost(request,response);
                 break;
@@ -118,7 +119,7 @@ public class AdminServlet extends HttpServlet {
         String name = request.getParameter("catName");
         int id = Integer.parseInt( request.getParameter("catOrParentID"));
         CategoryModel.updateName(id,name);
-        goBack(request,response);
+        ServletUtils.redirect("/Admin/Index",request,response);
     }
     private void doPostDeletePost(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("postDeleteID"));

@@ -61,11 +61,11 @@
                                         </c:choose>
 
 
-                                        <span>
-                                <button type="button" class="btn btn-outline-light">Share
-                                    <i class="far fa-share-square pl-2"></i>
-                                </button>
-                            </span>
+<%--                                        <span>--%>
+<%--                                <button type="button" class="btn btn-outline-light">Share--%>
+<%--                                    <i class="far fa-share-square pl-2"></i>--%>
+<%--                                </button>--%>
+<%--                            </span>--%>
                                     </div>
                                 </div>
 
